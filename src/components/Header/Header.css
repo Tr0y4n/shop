@@ -1,0 +1,26 @@
+.icons {
+  margin-left: 20px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.logo {
+  display: flex;
+  flex-direction: row;
+  width: 150px;
+}
+
+.container {
+  width: 1900px;
+}
+
+.lin {
+  display: flex;
+  width: 1050px;
+  justify-content: center;
+}
+
+.mrg {
+  margin-left: 30px;
+  margin-right: 30px;
+}

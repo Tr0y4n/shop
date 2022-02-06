@@ -1,0 +1,29 @@
+.block {
+    width: 350px;
+    height: 330px;
+    margin-top: 10px;
+}
+
+.grid {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.title {
+    color: blue;
+    margin-top: 5px;
+}
+
+.description {
+    width: 345px;
+    margin: 2px;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.img {
+    width: 100%;
+}
