@@ -4,10 +4,10 @@ import Tab from "react-bootstrap/Tab";
 import Row from "react-bootstrap/Row";
 import Nav from "react-bootstrap/Nav";
 import Col from "react-bootstrap/Col";
-import logo from "../../../assets/big_logo.jpg";
-import team from "../../../assets/team.jpg";
-import get from "../../../assets/box.jpg";
-import commie from "../../../assets/commie.jpg";
+import logo from "../../assets/big_logo.jpg";
+import team from "../../assets/team.jpg";
+import get from "../../assets/box.jpg";
+import commie from "../../assets/commie.jpg";
 
 export default function AboutPage() {
   return (

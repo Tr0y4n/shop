@@ -1,13 +1,13 @@
 import React from "react";
 import "./PromotionPage.css";
-import promo1 from "../../../assets/promo1.jpg";
-import promo2 from "../../../assets/promo2.jpg";
-import promo3 from "../../../assets/promo3.jpg";
-import promo4 from "../../../assets/promo4.jpg";
-import promo5 from "../../../assets/promo5.jpg";
-import promo6 from "../../../assets/promo6.jpg";
-import promo7 from "../../../assets/promo7.jpg";
-import promo8 from "../../../assets/promo8.jpg";
+import promo1 from "../../assets/promo1.jpg";
+import promo2 from "../../assets/promo2.jpg";
+import promo3 from "../../assets/promo3.jpg";
+import promo4 from "../../assets/promo4.jpg";
+import promo5 from "../../assets/promo5.jpg";
+import promo6 from "../../assets/promo6.jpg";
+import promo7 from "../../assets/promo7.jpg";
+import promo8 from "../../assets/promo8.jpg";
 
 export default function PromotionBlock() {
   return (
@@ -58,6 +58,7 @@ export default function PromotionBlock() {
         <img src={promo8} alt="brr" className="img" />
         <h4 className="title">Приходите с детьми!</h4>
         <p className="description">И покупайте товары со скидкой 5%</p>
+        <p className="date">До 23 февраля</p>
       </div>   
     </div>
   );

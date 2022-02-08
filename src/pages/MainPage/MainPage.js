@@ -1,6 +1,6 @@
 import React from 'react';
 import { BsFillCartFill } from "react-icons/bs";
-import CarouselBox from '../../CarouselBox/CarouselBox';
+import CarouselBox from '../../components/CarouselBox/CarouselBox';
 
 export default function MainPage() {
     return(

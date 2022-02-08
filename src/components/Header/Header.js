@@ -3,11 +3,11 @@ import { Button, Container, FormControl, Navbar, Nav, Form } from "react-bootstr
 import './Header.css';
 import logo from '../../assets/logo192.png';
 import { BrowserRouter as Router, Routes, Route} from "react-router-dom";
-import MainPage from "../pages/MainPage/MainPage";
-import BasketPage from "../pages/BasketPage/BasketPage";
-import LoginPage from "../pages/LoginPage/LoginPage";
-import AboutPage from "../pages/AboutPage/AboutPage";
-import PromotionPage from "../pages/PromotionPage/PromotionPage";
+import MainPage from "../../pages/MainPage/MainPage";
+import BasketPage from "../../pages/BasketPage/BasketPage";
+import LoginPage from "../../pages/LoginPage/LoginPage";
+import AboutPage from "../../pages/AboutPage/AboutPage";
+import PromotionPage from "../../pages/PromotionPage/PromotionPage";
 import { BsFillCartFill } from "react-icons/bs";
 import { BsPersonFill } from "react-icons/bs";
 
