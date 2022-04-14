@@ -4,17 +4,22 @@ const sequelize = require("./db");
 const models = require("./models/models");
 const cors = require("cors");
 const router = require("./routes/index");
-const errorHandler = require('./middleware/errorHandlingMiddleware')
+const errorHandler = require("./middleware/errorHandlingMiddleware");
+const fileUpload = require("express-fileupload");
+const bodyParser = require("body-parser");
+const path = require("path");
 
 const PORT = process.env.PORT || 5000;
 
 const app = express();
 app.use(cors());
 app.use(express.json());
+app.use(fileUpload({}));
+app.use(bodyParser.json());
+app.use(express.static(path.resolve(__dirname, "static")));
 app.use("/api", router); //сообщаем серверу о существовании роутеров
 
-app.use(errorHandler)
-
+app.use(errorHandler);
 
 const start = async () => {
   try {
