@@ -1,0 +1,25 @@
+.cont {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    width: 600px;
+    padding: 50px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+}
+
+.inputs {
+    margin-top: 20px;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5px;
+}
