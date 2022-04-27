@@ -16,20 +16,20 @@ export default function AboutPage() {
         <Row>
           <Col sm={3} className="col1">
             <Nav variant="pills" className="navs">
-              <Nav.Item>
+              <Nav.Item style={{cursor: "pointer"}}>
                 <Nav.Link eventKey="first">О нас</Nav.Link>
               </Nav.Item>
-              <Nav.Item>
+              <Nav.Item style={{cursor: "pointer"}}>
                 <Nav.Link eventKey="second">Наша команда</Nav.Link>
               </Nav.Item>
-              <Nav.Item>
+              <Nav.Item style={{cursor: "pointer"}}>
                 <Nav.Link eventKey="third">Как заказать товар</Nav.Link>
               </Nav.Item>
-              <Nav.Item>
+              {/* <Nav.Item style={{cursor: "pointer"}}>
                 <Nav.Link eventKey="fourth">
                   Почему коммунисты - не люди
                 </Nav.Link>
-              </Nav.Item>
+              </Nav.Item> */}
             </Nav>
           </Col>
           <Col sm={9} className="col2">
@@ -62,7 +62,7 @@ export default function AboutPage() {
                 </p>
                 <p>Шутка. Я вообще нихрена не реализую.</p>
               </Tab.Pane>
-              <Tab.Pane eventKey="fourth">
+              {/* <Tab.Pane eventKey="fourth">
                 <img src={commie} alt='brr' className="pic"/>
                 <p>Начать надо с того, что узурпация революции Большевиками - это одно из худших событий в 
                 истории, которые случались с Россией. Послемонархическая Россия, в которой наконец-то смогли
@@ -82,7 +82,7 @@ export default function AboutPage() {
                 И это лишь малый список преступлений коммунистов против страны, народа России и человечества 
                 в целом. Так что если вы их продолжаете поддерживать или хотя бы симпатизировать коммунизму -
                 вы клинический шизоид, немедленно проследуйте в свою камеру (газовую).</p>
-              </Tab.Pane>
+              </Tab.Pane> */}
             </Tab.Content>
           </Col>
         </Row>

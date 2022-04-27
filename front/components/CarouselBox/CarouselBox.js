@@ -22,13 +22,13 @@ export default function CarouselBox() {
                     <p>Теперь появились альтернативные способы оплаты вашего любимого гаджета!</p>
                 </Carousel.Caption>
             </Carousel.Item>
-            <Carousel.Item>
+            {/* <Carousel.Item>
                 <img height={600} className='d-block w-100' src={P3} alt='Акция 3' />
                 <Carousel.Caption>
                     <h3>Хотите прикупить себе новый MacBook?</h3>
                     <p>Сделайте это с максимальной выгодой в магазине Tyoma-shop!</p>
                     </Carousel.Caption>
-            </Carousel.Item>
+            </Carousel.Item> */}
         </Carousel>
     )
 }

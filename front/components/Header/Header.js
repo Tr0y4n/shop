@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Button,
   Container,
@@ -11,13 +11,16 @@ import "./Header.css";
 import logo from "../../assets/logo192.png";
 import { BsFillCartFill } from "react-icons/bs";
 import { BsPersonFill } from "react-icons/bs";
-import { ADMIN_ROUTE, BASKET_ROUTE, LOGIN_ROUTE, REGISTRATION_ROUTE, ABOUT_ROUTE, PROMOTION_ROUTE, MAIN_ROUTE, KATALOG_ROUTE } from "../../Utils/Consts";
+import { ADMIN_ROUTE, BASKET_ROUTE, LOGIN_ROUTE, ABOUT_ROUTE, PROMOTION_ROUTE, MAIN_ROUTE, KATALOG_ROUTE } from "../../Utils/Consts";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
+//import Auth from "../modals/Auth";
+
 
 export default function Header() {
   const isLoggedIn = useSelector(state => state.authReducer.isLoggedIn);
   const navigate = useNavigate();
+  //const [showLogin, setShowLogin] = useState(false)
   return (
     <div>
       <Navbar
@@ -55,11 +58,15 @@ export default function Header() {
               <Nav.Link onClick={() => navigate(BASKET_ROUTE)}>
                 <BsFillCartFill color="white" size="1.5em" />
               </Nav.Link>
-              <Nav.Link onClick={() => navigate(LOGIN_ROUTE)}>
+              <Nav.Link onClick={
+              () => navigate(LOGIN_ROUTE)
+              //() => setShowLogin(true)
+              }>
                 <BsPersonFill color="white" size="1.5em" />
               </Nav.Link>
             </Nav>
           </Navbar.Collapse>
+            {/* <Auth show={showLogin} onHide={() => setShowLogin(false)}/> */}
         </Container>
       </Navbar>
     </div>

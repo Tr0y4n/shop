@@ -1,0 +1,28 @@
+.btnn {
+    width: 300px;
+    margin-top: 15px;
+    display: flex;
+    justify-content: center
+}
+
+.lower {
+    display: flex;
+    margin-top: 5px;
+    flex-direction: column;
+}
+
+.ass {
+    display: flex;
+    justify-content: center
+}
+
+.tog {
+    display: flex;
+    flex-direction: row;
+}
+
+.link {
+    margin-left: 3px;
+    color: blue;
+    text-decoration: underline;
+}
