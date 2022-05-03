@@ -13,13 +13,19 @@ import { BsFillCartFill } from "react-icons/bs";
 import { BsPersonFill } from "react-icons/bs";
 import { ADMIN_ROUTE, BASKET_ROUTE, LOGIN_ROUTE, ABOUT_ROUTE, PROMOTION_ROUTE, MAIN_ROUTE, KATALOG_ROUTE } from "../../Utils/Consts";
 import { useNavigate } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { logOutAction, registerAction } from "../../store/authReducer";
 //import Auth from "../modals/Auth";
 
 
 export default function Header() {
   const isLoggedIn = useSelector(state => state.authReducer.isLoggedIn);
   const navigate = useNavigate();
+  const dispatch = useDispatch()
+  const logOut = () => {
+    dispatch(logOutAction())
+    dispatch(registerAction({}))
+  }
   //const [showLogin, setShowLogin] = useState(false)
   return (
     <div>
@@ -46,8 +52,11 @@ export default function Header() {
                 Акции
               </Nav.Link>
               <Nav.Link  onClick={() => navigate(ABOUT_ROUTE)}>О нас</Nav.Link>
-              { isLoggedIn?
+              { isLoggedIn?  // Тут проверять еще на роль
               <Nav.Link className="mrg" onClick={() => navigate(ADMIN_ROUTE)}>Администратор</Nav.Link>
+                : "-"}
+                { isLoggedIn?
+              <Nav.Link className="" onClick={logOut}>Выйти</Nav.Link>
                 : "-"}
             </Nav>
             <Form className="d-flex">

@@ -1,49 +1,39 @@
-const LOG_IN = 'LOG_IN';
-const LOG_OUT = 'LOG_OUT';
+const SET_DEVICES = "SET_DEVICES";
+const SET_TYPES = "SET_TYPES";
+const SET_BRANDS = "SET_BRANDS";
+const SET_SELECTED_TYPE = "SET_SELECTED_TYPE";
+const SET_SELECTED_BRAND = "SET_SELECTED_BRAND";
 
 const defaultState = {
-    types: [
-    {id: 1, name: "Холодильники"},
-    {id: 2, name: "Смартфоны"},
-    {id: 3, name: "Телевизоры"},
-    {id: 4, name: "Плиты"}
-],
-brands: [
-    {id: 1, name: "Samsung"},
-    {id: 2, name: "Apple"},
-    {id: 3, name: "Lenovo"},
-    {id: 4, name: "Sony"},
-],
-devices: [
-    {id: 1, name: "Iphone 12 pro", price: 250000, rating: 5, img: 'https://www.mountaineers.org/images/placeholder-images/placeholder-400-x-300/image'},
-    {id: 2, name: "Iphone 13 pro", price: 250000, rating: 5, img: 'https://www.ex-t.com/wp-content/uploads/2019/03/400x600.png'},
-    {id: 3, name: "Ipad pro max", price: 250000, rating: 5, img: 'img'},
-    {id: 4, name: "Xperia Z3", price: 250000, rating: 5, img: 'img'},
-    {id: 1, name: "Iphone 12 pro", price: 250000, rating: 5, img: 'img'},
-    {id: 2, name: "Iphone 13 pro", price: 250000, rating: 5, img: 'img'},
-    {id: 3, name: "Ipad pro max", price: 250000, rating: 5, img: 'img'},
-    {id: 4, name: "Xperia Z3", price: 250000, rating: 5, img: 'img'},
-    {id: 1, name: "Iphone 12 pro", price: 250000, rating: 5, img: 'img'},
-    {id: 2, name: "Iphone 13 pro", price: 250000, rating: 5, img: 'img'},
-    {id: 3, name: "Ipad pro max", price: 250000, rating: 5, img: 'img'},
-    {id: 4, name: "Xperia Z3", price: 250000, rating: 5, img: 'img'},
-    {id: 1, name: "Iphone 12 pro", price: 250000, rating: 5, img: 'img'},
-    {id: 2, name: "Iphone 13 pro", price: 250000, rating: 5, img: 'img'},
-    {id: 3, name: "Ipad pro max", price: 250000, rating: 5, img: 'img'},
-    {id: 4, name: "Xperia Z3", price: 250000, rating: 5, img: 'img'},
-]}
+  types: [],
+  brands: [],
+  devices: [],
+  selectedType: {name: null},
+  selectedBrand: {name: null},
+};
 
 const deviceReducer = (state = defaultState, action) => {
-    switch (action.type) {
-        case LOG_IN:
-            return {...state, isLoggedIn: !state.isLoggedIn}
-        case LOG_OUT:
-            return {...state, isLoggedIn: !state.isLoggedIn}
-        default: 
-        return state
-    }
-}
+  switch (action.type) {
+    case SET_DEVICES:
+      return { ...state, devices: action.payload };
+    case SET_TYPES:
+      return { ...state, types: action.payload };
+    case SET_BRANDS:
+      return { ...state, brands: action.payload };
+      case SET_SELECTED_TYPE:
+      console.log("SET_SELECTED_TYPE WORKING");
+      return { ...state, selectedType: action.payload };
+    case SET_SELECTED_BRAND:
+      console.log("SET_SELECTED_BRAND WORKING");
+      return { ...state, selectedBrand: action.payload };
+    default:
+      return state;
+  }
+};
 
-export const logInAction = (payload) => ({type: LOG_IN, payload})
-export const logOutAction = (payload) => ({type: LOG_OUT, payload})
+export const setDeviceAction = (payload) => ({ type: SET_DEVICES, payload });
+export const setTypeAction = (payload) => ({ type: SET_TYPES, payload });
+export const setBrandAction = (payload) => ({ type: SET_BRANDS, payload });
+export const setSelectedTypeAction = (payload) => ({ type: SET_SELECTED_TYPE, payload });
+export const setSelectedBrandAction = (payload) => ({ type: SET_SELECTED_BRAND, payload });
 export default deviceReducer;

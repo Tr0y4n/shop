@@ -12,12 +12,10 @@ export default function AppRouter() {
     <Routes>
       {isLoggedIn &&
         authRoutes.map(({ path, Component }) => {
-          //console.log('path =', path, 'Component =', Component);
         return(
           <Route key={path} path={path} element={<Component />} />)
         })}
       {publicRoutes.map(({ path, Component }) => {
-        //console.log('path =', path, 'Component =', Component);
         return(
         <Route key={path} path={path} element={<Component />} />)
       })}

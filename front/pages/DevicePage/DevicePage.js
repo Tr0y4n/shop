@@ -1,22 +1,23 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Container, Col, Card, Image, Row } from 'react-bootstrap';
 import star from '../../assets/star.svg';
 import { Button } from 'react-bootstrap';
+import { useParams } from 'react-router-dom';
+import { fetchOneDevice } from '../../http/deviceApi';
 
 export default function DevicePage() {
-    const device = {id: 1, name: "Iphone 12 pro", price: 250000, rating: 5, img: 'https://www.mountaineers.org/images/placeholder-images/placeholder-400-x-300/image'};
-    const description = [
-        {id: 1, title: 'Оперативная память', description: '5 Гб'},
-        {id: 2, title: 'Камера', description: '12 мп'},
-        {id: 3, title: 'Процессор', description: 'Пентиум 3'},
-        {id: 4, title: 'Кол-во ядер', description: '2'},
-        {id: 5, title: 'Аккумулятор', description: '4000'},
-    ]
+    const [device, setDevice] = useState({info: []})
+    const {id} = useParams()
+
+    useEffect(() => {
+        fetchOneDevice(id).then(data => setDevice(data))
+    }, [])
+
     return (
         <Container className="mt-3">
             <Row>
                 <Col md={4}>
-                    <Image width={300} height={300} src={device.img}/>
+                    <Image width={300} height={300} src={"http://localhost:5000/" + device.img}/>
                 </Col>
                 <Col md={4}>
                     <Row className="d-flex flex-column align-items-center">
@@ -41,7 +42,7 @@ export default function DevicePage() {
             </Row>
             <Row className="d-flex flex-column m-3">
                 <h1>Характеристики</h1>
-                {description.map((info, index) =>
+                {device.info.map((info, index) =>
                     <Row key={info.id} style={{background: index % 2 === 0 ? 'lightgray' : 'transparent', padding: 10}}>
                         {info.title}: {info.description}
                     </Row>
