@@ -5,7 +5,8 @@
 }
 
 .cardd {
-    max-width: 100px;
-    height: 55px;
+    max-width: 110px;
+    height: 50px;
     text-align: center;
+    justify-content: center;
 }

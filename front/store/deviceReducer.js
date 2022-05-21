@@ -8,8 +8,8 @@ const defaultState = {
   types: [],
   brands: [],
   devices: [],
-  selectedType: {name: null},
-  selectedBrand: {name: null},
+  selectedType: { name: null },
+  selectedBrand: { name: null },
 };
 
 const deviceReducer = (state = defaultState, action) => {
@@ -20,7 +20,7 @@ const deviceReducer = (state = defaultState, action) => {
       return { ...state, types: action.payload };
     case SET_BRANDS:
       return { ...state, brands: action.payload };
-      case SET_SELECTED_TYPE:
+    case SET_SELECTED_TYPE:
       console.log("SET_SELECTED_TYPE WORKING");
       return { ...state, selectedType: action.payload };
     case SET_SELECTED_BRAND:
@@ -34,6 +34,12 @@ const deviceReducer = (state = defaultState, action) => {
 export const setDeviceAction = (payload) => ({ type: SET_DEVICES, payload });
 export const setTypeAction = (payload) => ({ type: SET_TYPES, payload });
 export const setBrandAction = (payload) => ({ type: SET_BRANDS, payload });
-export const setSelectedTypeAction = (payload) => ({ type: SET_SELECTED_TYPE, payload });
-export const setSelectedBrandAction = (payload) => ({ type: SET_SELECTED_BRAND, payload });
+export const setSelectedTypeAction = (payload) => ({
+  type: SET_SELECTED_TYPE,
+  payload,
+});
+export const setSelectedBrandAction = (payload) => ({
+  type: SET_SELECTED_BRAND,
+  payload,
+});
 export default deviceReducer;

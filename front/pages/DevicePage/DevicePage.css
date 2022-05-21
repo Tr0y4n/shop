@@ -1,0 +1,79 @@
+.row {
+    justify-content: space-between;
+}
+
+.rate {
+    margin-top: -10px;
+}
+
+.ratingNumb {
+    margin-top: -27px;
+    margin-left: 83px;
+}
+
+.har {
+    display: flex;
+    flex-direction: row;
+    height: 11px;
+    align-items: center;
+}
+
+.ss {
+    width: 300px;
+}
+
+.cardoch {
+    width: 250px;
+    height: 160px;
+    display: flex;
+    align-items: center;
+}
+
+.price1 {
+    font-size: 22px;
+    margin-right: 5px;
+    margin-top: -15px;
+    margin-left: -10px;
+}
+
+.price2 {
+    font-size: 18px;
+    margin-top: -10px;
+    text-decoration: line-through;
+    color: rgb(164, 162, 162)
+}
+
+.prices {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    /* margin-right: 35px; */
+}
+
+.buttonka {
+    width: 200px;
+    margin-top: 20px;
+}
+
+.zag {
+    display: flex;
+    margin-right: 140px;
+    margin-top: -35px;
+    margin-bottom: 25px;
+    text-decoration: underline;
+    color: rgb(76, 76, 76);
+}
+
+.vsp {
+    margin-left: 20px;
+    margin-top: 20px;
+    /* margin-bottom: 280px; */
+}
+
+.recomends {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 100px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}

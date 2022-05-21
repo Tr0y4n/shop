@@ -46,12 +46,14 @@ export default function CreateDevice(props) {
 
   const addDevice = () => {
     const formData = new FormData()
+    const mockRating = 4 + Math.random().toFixed(1)
     formData.append('name', name)
     formData.append('price', `${price}`)
     formData.append('img', file)
     formData.append('brandId', brand.id)
     formData.append('typeId', type.id)
     formData.append('info', JSON.stringify(info))
+    //formData.append('rating', mockRating)
     createDevice(formData).then(() => props.onHide())
   }
 

@@ -15,9 +15,9 @@ import {
 } from "../../store/deviceReducer";
 import Pages from "../../components/Pages/Pages";
 import { setTotalAction } from "../../store/PagesReducer";
+import PriceFilter from "../../components/PriceFilter/PriceFilter";
 
 export default function ShopPage() {
-  const goods = useSelector((state) => state.deviceReducer);
   const pagesState = useSelector((state) => state.pagesReducer);
   const dispatch = useDispatch();
   const deviceState = useSelector((state) => state.deviceReducer)
@@ -25,27 +25,26 @@ export default function ShopPage() {
   useEffect(() => {
     fetchTypes().then((data) => dispatch(setTypeAction(data)));
     fetchBrands().then((data) => dispatch(setBrandAction(data)));
-    fetchDevices(null, null, 1, 2).then((data) => {
-      dispatch(setDeviceAction(data.rows));
-      dispatch(setTotalAction(data.count));
-    });
+    // fetchDevices(null, null, 1, 2).then((data) => {
+    //   dispatch(setDeviceAction(data.rows));
+    //   dispatch(setTotalAction(data.count));
+    // });
   }, []);
-  console.log("deviceState.selectedType = ", deviceState.selectedType)
-  console.log("deviceState.selectedBrand = ", deviceState.selectedBrand)
+  
   useEffect(() => {
-    // console.log("pagesState.selectedType = ", pagesState.selectedType)
-    // console.log("pagesState.selectedBrand = ", pagesState.selectedBrand)
-      fetchDevices(deviceState.selectedType.id, deviceState.selectedBrand.id, pagesState.page, 4).then((data) => {
+      fetchDevices(deviceState.selectedType.id, deviceState.selectedBrand.id, pagesState.page, 8).then((data) => {
+      console.log("DATA === ", data)
       dispatch(setDeviceAction(data.rows));
       dispatch(setTotalAction(data.count));
     });
   }, [pagesState.page, deviceState.selectedType.id, deviceState.selectedBrand.id]);
-
+  
   return (
     <Container>
       <Row className="mt-3">
         <Col md={3}>
-          <TypeBar />
+          <TypeBar /> 
+          <PriceFilter />  
         </Col>
         <Col md={9}>
           <BrandBar />

@@ -1,0 +1,20 @@
+.all {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 18px;
+    font-size: 20px;
+}
+
+.in {
+    width: 20px;
+}
+
+.left {
+    margin-right: 15px;
+}
+
+.oo {
+    margin-top: 10px;
+}
