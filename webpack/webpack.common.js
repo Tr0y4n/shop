@@ -34,7 +34,7 @@ const clientConfig = {
  module: {
   rules: [
    {
-    test: /\.html$/i,
+    test: /\.html$/,
     loader: 'html-loader',
    },
    {
