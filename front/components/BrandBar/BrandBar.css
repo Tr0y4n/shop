@@ -1,0 +1,12 @@
+.rdow {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.cardd {
+    max-width: 110px;
+    height: 50px;
+    text-align: center;
+    justify-content: center;
+}

@@ -16,7 +16,13 @@ app.use(cors());
 app.use(express.json());
 app.use(fileUpload({}));
 app.use(bodyParser.json());
-app.use(express.static(path.resolve(__dirname, "static")));
+//app.use(express.static(path.resolve(__dirname, "static")));
+
+app.use(express.static(__dirname + './../dist'));
+
+app.use('/', (_, res) => {
+    res.sendFile(path.resolve(__dirname));
+});
 app.use("/api", router); //сообщаем серверу о существовании роутеров
 
 app.use(errorHandler);

@@ -16,8 +16,6 @@ class UserController {
     console.log(req.body);
     const { email, password, role } = req.body;
     if (!email || !password) {
-      console.log("EMAIL: ", email);
-      console.log("PASSWORD: ", password);
       return next(ApiError.badRequest("Не указан email или пароль"));
     }
     const candidate = await User.findOne({ where: { email } });

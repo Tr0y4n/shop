@@ -1,5 +1,6 @@
 const sequelize = require('../db')
 const {DataTypes} = require('sequelize')
+const Mockrate = String((4 + Number(Math.random().toFixed(1))) * 10); 
 
 // Здесь описываются таблицы, которые будут в базе данных
 const User = sequelize.define('user', {
@@ -21,7 +22,7 @@ const Device = sequelize.define('device', {
     id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
     name: {type: DataTypes.STRING, unique: true, allowNull: false},
     price: {type: DataTypes.INTEGER, allowNull: false},
-    rating: {type: DataTypes.INTEGER, defaultValue: 0},
+    rating: {type: DataTypes.STRING, defaultValue: Mockrate},
     img: {type: DataTypes.STRING, allowNull: false},
 })
 
@@ -35,10 +36,10 @@ const Brand = sequelize.define('brand', {
     name: {type: DataTypes.STRING, unique: true, allowNull: false},
 })
 
-const Rating = sequelize.define('rating', {
-    id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
-    rate: {type: DataTypes.INTEGER, allowNull: false},
-})
+// const Rating = sequelize.define('rating', {
+//     id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
+//     rate: {type: DataTypes.INTEGER, allowNull: false},
+// })
 
 const DeviceInfo = sequelize.define('device_info', {
     id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
@@ -53,8 +54,8 @@ const TypeBrand = sequelize.define('type_brand', {
 User.hasOne(Basket) //Одному пользователю принадлежит одна корзина
 Basket.belongsTo(User) //Подвязка корзины к пользователю
 
-User.hasMany(Rating)    
-Rating.belongsTo(User)
+// User.hasMany(Rating)    
+// Rating.belongsTo(User)
 
 Basket.hasMany(BasketDevice)
 BasketDevice.belongsTo(Basket)
@@ -62,8 +63,8 @@ BasketDevice.belongsTo(Basket)
 Device.hasMany(DeviceInfo, {as: 'info'})
 DeviceInfo.belongsTo(Device)
 
-Device.hasMany(Rating)
-Rating.belongsTo(Device)
+// Device.hasMany(Rating)
+// Rating.belongsTo(Device)
 
 Device.hasMany(BasketDevice)
 BasketDevice.belongsTo(Device)
@@ -85,6 +86,6 @@ module.exports = {
     Type,
     Brand,
     TypeBrand,
-    Rating,
+    // Rating,
     DeviceInfo
 }

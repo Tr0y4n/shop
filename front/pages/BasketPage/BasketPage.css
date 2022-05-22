@@ -1,0 +1,118 @@
+.emptyBask {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 15%;
+}
+
+.mainRow {
+    display: flex;
+    flex-direction: row;
+    margin-left: 50px;
+    margin-bottom: 15px;
+    align-items: center;
+    outline: 1px solid rgb(199, 191, 191);
+    width: 900px;
+    /* height: 250px; */
+    box-shadow: 5px 4px 10px 3px rgb(40, 39, 39);
+}
+
+.line {
+    font-size: medium;
+    width: 220px;
+}
+
+.bb {
+    height: 40px;
+    margin-left: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.del {
+    width: 22px;
+    height: 22px;
+}
+
+.card {
+    border: 2px solid black;
+}
+
+.price {
+    width: 95px;
+    font-size: 20px;
+    margin-left: 50px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.name {
+    width: 350px;
+    font-size: 18px;
+    font-weight: bolder;
+}
+
+.inp {
+    width: 110px;
+}
+
+.point {
+    cursor: pointer
+}
+
+.bfullcards {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.buyCard {
+    width: 250px;
+    height: 235px;
+    border: 1px solid rgb(163, 158, 158);
+    margin-right: 50px;
+}
+
+.itogo {
+    display: flex;
+    flex-direction: column;
+}
+
+.itogoTxt {
+    margin-left: 10px;
+}
+
+.liltext {
+    font-size: 16px;
+}
+
+.buyButton {
+    display: flex;
+    justify-content: center;
+    width: 230px;
+}
+
+.ff {
+    margin-top: 40px;
+}
+
+.stline {
+    display: flex;
+    flex-direction: row;
+    margin-top: -20px;
+}
+
+.right {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 10px;
+}
+
+.bold {
+    font-weight: bolder;
+}
+
+.minMrgHr {
+    margin-top: -3px;
+}
