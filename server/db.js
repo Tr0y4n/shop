@@ -1,12 +1,12 @@
-const { Sequelize } = require("sequelize");
+const { Sequelize } = require('sequelize');
 
 module.exports = new Sequelize(
-  process.env.DB_NAME, //Название БД
-  process.env.DB_USER, //Пользователь
-  process.env.DB_PASSWORD, //Пароль
-  {
-    dialect: "postgres", // название используемой БД
-    host: process.env.DB_HOST, // Хост
-    port: process.env.DB_PORT, // На каком она порте (настраивается в приложении БД)
-  }
+ 'db1', //Название БД
+ 'user1', //Пользователь
+ 'andim461', //Пароль
+ {
+  dialect: 'postgres', // название используемой БД
+  host: 'rc1b-rnxsxdd54shxmkol.mdb.yandexcloud.net', // Хост
+  port: 6432, // На каком она порте (настраивается в приложении БД)
+ }
 );
