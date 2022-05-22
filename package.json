@@ -49,7 +49,8 @@
     "build-server": "webpack --config webpack/webpack.config.js --env env=prod part=server",
     "predeploy": "npm run build",
     "server": "node server/index.js",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install && npm install ./server && npm run build "
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install && npm install ./server && npm run build",
+    "heroku-prebuild": "npm install -D webpack-cli"
   },
   "eslintConfig": {
     "extends": [
