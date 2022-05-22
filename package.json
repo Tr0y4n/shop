@@ -2,6 +2,9 @@
   "name": "ishop",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": "16.x"
+  },
   "dependencies": {
     "@babel/plugin-transform-runtime": "^7.15.0",
     "@babel/preset-typescript": "^7.15.0",
