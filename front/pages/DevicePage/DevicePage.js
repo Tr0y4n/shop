@@ -76,9 +76,6 @@ export default function DevicePage() {
       let prev = " ";
       for (let i = 0; i < 3; i++) {
         const r = randomInteger(0, 5)
-        console.log("r = ", r)
-        console.log("prev = ", prev)
-        console.log("prevprev = ", prevprev)
         if (+prev !== r && +prevprev !== r) {temp.push(data.rows[r]); console.log("pushin"); prevprev = prev;
         prev = `${r}`} else {i--; console.log("breakin"); }
       } 

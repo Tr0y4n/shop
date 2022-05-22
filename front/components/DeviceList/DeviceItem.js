@@ -10,17 +10,31 @@ export default function DeviceItem(props) {
   const nameArr = props.device.name.split(" ");
   const index = props.device.name.indexOf(" ");
   const nameMas = props.device.name.slice(index);
-  let rate = String(props.device.rating).slice(0, 1) + '.' + String(props.device.rating).slice(1, 2);
-  // console.log("nameArr = ", nameArr)
-  // console.log("index = ", index)
-  // console.log("nameMas = ", nameMas)
-
+  let rate =
+    String(props.device.rating).slice(0, 1) +
+    "." +
+    String(props.device.rating).slice(1, 2);
 
   return (
     <Col
       md={3}
       className="mt-3"
-      onClick={() => navigate(DEVICE_ROUTE + "/" + props.device.id)}
+      onClick={() => {
+        navigate(DEVICE_ROUTE + "/" + props.device.id);
+        const watchedArr =
+          JSON.parse(localStorage.getItem("watchedArr")) !== null
+            ? JSON.parse(localStorage.getItem("watchedArr"))
+            : [];
+        let flag = true;
+        watchedArr.forEach(element => {
+          element.id === props.device.id ? flag = false : ''
+        });
+        if (flag) {
+          watchedArr.length > 3 ? watchedArr.shift() : null
+          watchedArr.push(props.device);
+          localStorage.setItem(`watchedArr`, JSON.stringify(watchedArr));
+          }
+      }}
     >
       <div className="carddy">
         <Image
