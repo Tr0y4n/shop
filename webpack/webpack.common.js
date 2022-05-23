@@ -43,7 +43,9 @@ const clientConfig = {
     use: [
      {
       loader: 'babel-loader',
-      ignore: ["./node_modules/mapbox-gl/dist/mapbox-gl.js"],
+      options: {
+        ignore: ["./node_modules/mapbox-gl/dist/mapbox-gl.js"],
+    }
      },
     ],
    },
