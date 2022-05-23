@@ -7,9 +7,9 @@ import { DEVICE_ROUTE } from "../../Utils/Consts";
 
 export default function DeviceItem(props) {
   const navigate = useNavigate();
-  const nameArr = props.device.name.split(" ");
-  const index = props.device.name.indexOf(" ");
-  const nameMas = props.device.name.slice(index);
+  const nameArr = props.device.name.split(" ") || [];
+  const index = props.device.name.indexOf(" ") || [];
+  const nameMas = props.device.name.slice(index) || [];
   let rate =
     String(props.device.rating).slice(0, 1) +
     "." +
@@ -29,7 +29,7 @@ export default function DeviceItem(props) {
         watchedArr.forEach(element => {
           element.id === props.device.id ? flag = false : ''
         });
-        if (flag) {
+        if (flag ) {
           watchedArr.length > 3 ? watchedArr.shift() : null
           watchedArr.push(props.device);
           localStorage.setItem(`watchedArr`, JSON.stringify(watchedArr));
