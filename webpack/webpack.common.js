@@ -30,9 +30,6 @@ const clientConfig = {
  target: 'web', // <=== can be omitted as default is 'web'
  resolve: {
   extensions: ['.tsx', '.ts', '.js', '.jsx'],
-  alias: {
-    'mapbox-gl': path.resolve('./node_modules/mapbox-gl/dist/mapbox-gl.js')
-  }
  },
  module: {
   rules: [
