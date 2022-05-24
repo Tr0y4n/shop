@@ -9,7 +9,7 @@ const fileUpload = require('express-fileupload');
 const bodyParser = require('body-parser');
 const path = require('path');
 
-const PORT = process.env.PORT || 1482;
+const PORT = process.env.PORT || 5000;
 
 const app = express();
 app.use(cors());
