@@ -14,7 +14,6 @@ import "./MainPage.css";
 export default function MainPage() {
   const devices = useSelector((state) => state.deviceReducer.devices);
   const dispatch = useDispatch();
-  const recs = [];
   const [news, setNews] = useState([]);
   const watchedArr =
     JSON.parse(localStorage.getItem("watchedArr")) !== null
@@ -95,7 +94,7 @@ export default function MainPage() {
   useEffect(() => {
     fetchTypes().then((data) => dispatch(setTypeAction(data)));
     fetchBrands().then((data) => dispatch(setBrandAction(data)));
-    fetchDevices(null, null, 1, 20).then((data) => {
+    fetchDevices(null, null, 1, 12).then((data) => {
       dispatch(setDeviceAction(data.rows));
       dispatch(setTotalAction(data.count));
       const temp = [];
@@ -103,7 +102,7 @@ export default function MainPage() {
       let prevprev = " ";
       let prev = " ";
       for (let i = 0; i < 4; i++) {
-        const r = randomInteger(0, 17);
+        const r = randomInteger(0, 3);
         if (+prev !== r && +prevprev !== r && +prev3 !== r) {
           temp.push(data.rows[r]);
           prev3 = prevprev;
