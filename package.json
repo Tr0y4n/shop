@@ -47,11 +47,10 @@
     "webpack": "^5.51.2"
   },
   "scripts": {
-    "start": "webpack-dev-server --config webpack/webpack.config.js --env env=prod",
+    "start": "webpack-dev-server --config webpack/webpack.config.js --env env=dev && npm server",
     "build": "webpack --config webpack/webpack.config.js --env env=prod",
     "build-server": "webpack --config webpack/webpack.config.js --env env=prod part=server",
     "predeploy": "npm run build",
-    "heroku-prebuild": "npm install --dev",
     "server": "node server/index.js"
   },
   "eslintConfig": {
