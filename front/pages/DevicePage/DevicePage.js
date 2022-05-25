@@ -68,7 +68,7 @@ export default function DevicePage() {
   }, []);
 
   useEffect(() => {
-    fetchDevices(7, null, null, 8).then((data) => {
+    fetchDevices(4, null, null, 6).then((data) => {
       console.log("DATA in useEffect and accessors=== ", data.rows);
       // setAccessors(data.rows);
       const temp = [];
@@ -76,9 +76,6 @@ export default function DevicePage() {
       let prev = " ";
       for (let i = 0; i < 3; i++) {
         const r = randomInteger(0, 5)
-        console.log("r = ", r)
-        console.log("prev = ", prev)
-        console.log("prevprev = ", prevprev)
         if (+prev !== r && +prevprev !== r) {temp.push(data.rows[r]); console.log("pushin"); prevprev = prev;
         prev = `${r}`} else {i--; console.log("breakin"); }
       } 
@@ -118,11 +115,11 @@ export default function DevicePage() {
                   <div className="har">
                     <div className="ss">{info.title}:</div>
                     <div className="ss1">
-                      {device.typeId === 2 ?
+                      {device.typeId === 1 ?
                       <SmartphoneItem device={device} info={info} price={price} setPrice={setPrice} priceSum={priceSum}/>
                       : device.typeId === 3 ? 
                       <TVItem device={device} info={info} price={price} setPrice={setPrice} priceSum={priceSum}/>
-                    : device.typeId === 5 ? 
+                    : device.typeId === 2 ? 
                     <LaptopItem device={device} info={info} price={price} setPrice={setPrice} priceSum={priceSum}/>
                   : "что-то пошло не так"}
                       </div>

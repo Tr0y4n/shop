@@ -7,6 +7,10 @@ const serverConfig = {
   module: {
     rules: [
       {
+        test: /\.html$/,
+        loader: "html-loader",
+      },
+      {
         test: /\.(ts|js)x?$/,
         exclude: /node_modules/,
         use: [
@@ -33,6 +37,10 @@ const clientConfig = {
   },
   module: {
     rules: [
+      {
+        test: /\.html$/,
+        loader: "html-loader",
+      },
       {
         test: /\.(ts|js)x?$/,
         exclude: /node_modules/,

@@ -1,6 +1,6 @@
 const sequelize = require('../db')
 const {DataTypes} = require('sequelize')
-const Mockrate = String((4 + Number(Math.random().toFixed(1))) * 10); 
+const Mockrate = String((4 + Number(Math.random().toFixed(1)) - 0.2) * 10); 
 
 // Здесь описываются таблицы, которые будут в базе данных
 const User = sequelize.define('user', {
