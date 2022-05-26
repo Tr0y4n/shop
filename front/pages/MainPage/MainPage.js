@@ -54,13 +54,13 @@ export default function MainPage() {
     }
     console.log("resBrand === ", resBrand)
     console.log("obKey = ", obKey)
-    let mightLike = devices.filter((item) => item.brandId === +obKey)
+    let mightLike = devices.filter((item) => item.brandId === +obKey) || []
     console.log("mightLike = ", mightLike)
     let likeRec = []
     
      if (mightLike.length < 4) {
-      const anotherKeys = Object.keys(countBrands).filter(item => item !== obKey)
-      mightLike = mightLike.concat(devices.filter((item) => item.brandId === +anotherKeys[0]))
+      const anotherKeys = Object.keys(countBrands).filter(item => item !== obKey) || []
+      mightLike = mightLike.concat(devices.filter((item) => item.brandId === +anotherKeys[0]) || [])
       console.log("mightLike = ", mightLike)
      }
      if (mightLike.length > 4) {
@@ -127,7 +127,7 @@ export default function MainPage() {
       <h2 className="heads">Смотрели ранее</h2>
       <RecComponent recs={watchedArr} />
       <h2 className="heads">Специально для Вас</h2>
-      <RecComponent recs={mightLike} />
+      <RecComponent recs={likeRec} />
       {/* <button onClick={localStorage.setItem(`watchedArr`, JSON.stringify([]))} >очистить локал</button> */}
     </div>
   );

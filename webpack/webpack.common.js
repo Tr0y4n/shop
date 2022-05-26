@@ -79,14 +79,14 @@ const clientConfig = {
     ],
   },
   output: {
-    path: path.resolve(__dirname, "..", "dist"),
+    path: path.resolve(__dirname, "..", "public"),
     filename: "bundle.js",
   },
-  plugins: [
-    new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, "../public/index.html"),
-    }),
-  ],
+  // plugins: [
+  //   new HtmlWebpackPlugin({
+  //     template: path.resolve(__dirname, "../public/index.html"),
+  //   }),
+  // ],
   //…
 };
 

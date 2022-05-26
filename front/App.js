@@ -13,19 +13,19 @@ import { Spinner } from 'react-bootstrap';
 function App() {
  const dispatch = useDispatch();
  const user = useSelector((state) => state.authReducer);
- const [loading, setLoading] = useState(true);
+ const [loading, setLoading] = useState(false);
 
- useEffect(() => {
-  check()
-   .then((data) => {
-    //Тут еще какого-то хуя он в user записывает true
-    dispatch(registerAction(jwt_decode(localStorage.token)));
-    dispatch(logInAction());
-    // console.log("pagesState.selectedType = ", pagesState.selectedType)
-    // console.log("pagesState.selectedBrand = ", pagesState.selectedBrand)
-   })
-   .finally(() => setLoading(false));
- }, []);
+//  useEffect(() => {
+//   check()
+//    .then((data) => {
+//     //Тут еще какого-то хуя он в user записывает true
+//     dispatch(registerAction(jwt_decode(localStorage.token)));
+//     dispatch(logInAction());
+//     // console.log("pagesState.selectedType = ", pagesState.selectedType)
+//     // console.log("pagesState.selectedBrand = ", pagesState.selectedBrand)
+//    })
+//    .finally(() => setLoading(false));
+//  }, []);
 
  if (loading) {
   return <Spinner animation='grow' />;
