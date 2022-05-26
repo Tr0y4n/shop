@@ -57,7 +57,9 @@ export default function DevicePage() {
           <Image
             width={300}
             height={300}
-            src={"http://localhost:5000/" + device.img}
+            src={
+              //"http://localhost:5000/" 
+              window.location.href + device.img}
           />
         </div>
         <div className="row">

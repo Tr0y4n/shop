@@ -40,7 +40,9 @@ export default function DeviceItem(props) {
         <Image
           width={190}
           height={190}
-          src={"http://localhost:5000/" + props.device.img}
+          src={
+            // "http://localhost:5000/" 
+            window.location.href + props.device.img}
         />
         <div className="cardTxt">
           <div>{nameArr[0]}</div>

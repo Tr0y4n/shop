@@ -107,7 +107,9 @@ export default function BasketItem(props) {
       <Image
         width={250}
         height={250}
-        src={"http://localhost:5000/" + props.item.img}
+        src={
+          //"http://localhost:5000/" 
+          window.location.href + props.item.img}
         className="point"
         onClick={() => navigate(DEVICE_ROUTE + "/" + `${props.item.id}`)}
       />

@@ -40,7 +40,7 @@ export default function Header() {
   const [search, setSearch] = useState("");
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  //localStorage.setItem("token", )
+
 
   const logOut = () => {
     dispatch(logOutAction());

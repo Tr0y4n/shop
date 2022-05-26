@@ -68,6 +68,7 @@ class DeviceController {
         offset,
       });
     }
+    console.log("Devices in getAll ==== ", devices)
     return res.json(devices);
   }
 
@@ -77,6 +78,7 @@ class DeviceController {
       where: { id },
       include: [{ model: DeviceInfo, as: "info" }],
     });
+    console.log("Devices in getOne ==== ", devices)
     return res.json(device);
   }
 }
