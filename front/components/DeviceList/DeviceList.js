@@ -4,7 +4,7 @@ import DeviceItem from './DeviceItem'
 import { useSelector } from "react-redux";
 
 export default function DeviceList() {
-    const devices = useSelector((state) => state.deviceReducer.devices);
+    const devices = useSelector((state) => state.deviceReducer.devices) || [];
     const pagesState = useSelector((state) => state.pagesReducer);
     const priceDevices = [];
     for (let i = 0; i < devices.length; i++) {

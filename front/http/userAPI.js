@@ -9,6 +9,7 @@ export const registration = async (email, password) => {
   });
   console.log("DATA = ", data);
   localStorage.setItem("token", data.token);
+  if (data.token !== "undefined")
   return jwt_decode(data.token);
 };
 
@@ -23,11 +24,13 @@ export const login = async (email, password) => {
   localStorage.setItem("token", data.token);
   //console.log("localStorage = ", localStorage);
   //console.log("JWT_DECODE = ", jwt_decode(data.token));
+  if (data.token !== "undefined")
   return jwt_decode(data.token);
 };
 
 export const check = async () => {
   const { data } = await $authHost.get("api/user/auth");
   localStorage.setItem("token", data.token);
+  if (data.token !== "undefined")
   return jwt_decode(data.token);
 };

@@ -12,11 +12,11 @@ export default function BrandBar() {
 
   return (
       <div className="rdow">
-        {brands.map((item) => (
+        {brands.map ? brands.map((item) => (
           <Card key={item.id} className="p-3 cardd" style={{cursor: "pointer"}} onClick={() => dispatch(setSelectedBrandAction(item))}  border={item.id === selected.id ? 'success' : 'info'}>
             {item.name}
           </Card>
-        ))}
+        )) : null}
       </div>
   );
 }

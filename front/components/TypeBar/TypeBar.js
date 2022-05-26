@@ -13,7 +13,7 @@ export default function TypeBar() {
   return (
     <div>
       <ListGroup>
-        {types.map((item) => (
+        {types.map ? types.map((item) => (
           <ListGroup.Item
             style={{ cursor: "pointer" }}
             key={item.id}
@@ -22,8 +22,8 @@ export default function TypeBar() {
           >
             {item.name}
           </ListGroup.Item>
-        ))}
+        )) : null}
       </ListGroup>
     </div>
-  );
+  )
 }

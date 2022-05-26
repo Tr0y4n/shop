@@ -23,12 +23,13 @@ export default function ShopPage() {
   const deviceState = useSelector((state) => state.deviceReducer)
 
   useEffect(() => {
-    fetchTypes().then((data) => dispatch(setTypeAction(data)));
-    fetchBrands().then((data) => dispatch(setBrandAction(data)));
+    fetchTypes().then((data) => {console.log("DATA TYPES +++=== ", data); dispatch(setTypeAction(data))});
+    fetchBrands().then((data) => {console.log("DATA BRANDS +++=== ", data); dispatch(setBrandAction(data))});
     // fetchDevices(null, null, 1, 2).then((data) => {
     //   dispatch(setDeviceAction(data.rows));
     //   dispatch(setTotalAction(data.count));
     // });
+    console.log("KATALOG USE")
   }, []);
   
   useEffect(() => {

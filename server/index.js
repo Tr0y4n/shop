@@ -20,7 +20,7 @@ app.use(bodyParser.json());
 
 app.use(express.static(__dirname + "./../public"));
 
-app.use("/", (_, res) => {
+app.get("/", (_, res) => {
   res.sendFile(path.resolve(__dirname, "./../public/index.html"));
 });
 app.use("/api", router); //сообщаем серверу о существовании роутеров

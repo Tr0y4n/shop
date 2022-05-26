@@ -22,6 +22,8 @@ export default function MainPage() {
       console.log("watchedArr = ", watchedArr)
       console.log("localStorage = ", localStorage)
 
+      // localStorage.setItem("token", "$2b$05$SEHwbmMWeesk/fJ/QM3TE.LjE7P/gRdNroWo4kpgElSsXi4HCZtMC")
+
     const specialArr = watchedArr.map(item => { return {brandId: item.brandId, typeId: item.typeId}}) 
     console.log("specialArr == ", specialArr)
     const brandArr = [];
@@ -58,7 +60,7 @@ export default function MainPage() {
     console.log("mightLike = ", mightLike)
     let likeRec = []
     
-     if (mightLike.length < 4) {
+     if (mightLike.length < 4 && mightLike.length > 1) {
       const anotherKeys = Object.keys(countBrands).filter(item => item !== obKey) || []
       mightLike = mightLike.concat(devices.filter((item) => item.brandId === +anotherKeys[0]) || [])
       console.log("mightLike = ", mightLike)
@@ -127,7 +129,7 @@ export default function MainPage() {
       <h2 className="heads">Смотрели ранее</h2>
       <RecComponent recs={watchedArr} />
       <h2 className="heads">Специально для Вас</h2>
-      <RecComponent recs={likeRec} />
+      <RecComponent recs={news} />
       {/* <button onClick={localStorage.setItem(`watchedArr`, JSON.stringify([]))} >очистить локал</button> */}
     </div>
   );

@@ -19,7 +19,10 @@ function App() {
 //   check()
 //    .then((data) => {
 //     //Тут еще какого-то хуя он в user записывает true
+//     console.log("data token = ", data)
+//     if (localStorage.token != "undefined") {
 //     dispatch(registerAction(jwt_decode(localStorage.token)));
+//     } else {console.log("tOKEN GOVNO")}
 //     dispatch(logInAction());
 //     // console.log("pagesState.selectedType = ", pagesState.selectedType)
 //     // console.log("pagesState.selectedBrand = ", pagesState.selectedBrand)
